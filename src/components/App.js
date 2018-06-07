@@ -29,14 +29,15 @@ class App extends Component {
   updatePost(text, id) {
     axios
       .put(`${this.state.baseUrl}/posts?id=${id}`, { text })
+      // .then(response => console.log(response))
       .then(response => this.setState({ posts: response.data }))
-      .catch(error => console.log(error))
+      .catch(error => console.log(error));
   }
 
   deletePost(id) {
-    axios
-      .delete(`${this.state.baseUrl}/posts?id=${id}`)
-      .then(results => this.setState({ posts: results.data }));
+    axios.delete(`${this.state.baseUrl}/posts?id=${id}`).then(results => {
+      this.setState({ posts: results.data });
+    });
   }
 
   createPost(text) {

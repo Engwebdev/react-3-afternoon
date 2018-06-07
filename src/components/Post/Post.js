@@ -93,16 +93,16 @@ export default class Post extends Component {
         */}
         <div className="Post__content">
           {// This has been pulled off of this.state via destructuring
-            editing ? (
-              <Edit
-                text={this.props.text}
-                hideEdit={this.hideEdit}
-                updatePostFn={this.props.updatePostFn}
-                id={this.props.id}
-              />
-            ) : (
-                <span className="Post__text">{this.props.text}</span>
-              )}
+          editing ? (
+            <Edit
+              text={this.props.text}
+              hideEdit={this.hideEdit}
+              updatePostFn={this.props.updatePostFn}
+              id={this.props.id}
+            />
+          ) : (
+            <span className="Post__text">{this.props.text}</span>
+          )}
         </div>
 
         {/* These are all of the cute little icons in the bottom left corner */}
